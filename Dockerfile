@@ -8,9 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install the application's dependencies inside the Docker image
-RUN pnpm install
-
-# 
+RUN npm i pnpm -g && pnpm install
 
 # Expose port 80 for the application to use
 EXPOSE 80 443 5000
