@@ -10,7 +10,7 @@
     "type-check": "tsc --noEmit",
     "with-env": "dotenv -e ../../.env --",
     "dev": "bun  --watch main.ts",
-    "start": "bun --watch main.ts"
+    "start-be": "bun --watch main.ts"
   },
   "dependencies": {
     "@elysiajs/cors": "^0.7.1",
