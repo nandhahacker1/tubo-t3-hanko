@@ -11,7 +11,7 @@
     "with-env": "dotenv -e ../../.env --",
     "dev": "bun  --watch main.ts",
     "start-be": "bun with-env main.ts",
-    "build": "tsc  --outDir dist",
+    "no-build": "tsc  --outDir dist",
     "start": "bun dist/main.js"
   },
   "dependencies": {
