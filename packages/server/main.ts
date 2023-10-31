@@ -12,6 +12,6 @@ const app = new Elysia()
             endpoint: '/api/trpc' 
         })
     )
-    .listen(80)
+    .listen(5000)
 
 console.log(`🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`)

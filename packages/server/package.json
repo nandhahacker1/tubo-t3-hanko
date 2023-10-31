@@ -9,8 +9,10 @@
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit",
     "with-env": "dotenv -e ../../.env --",
-    "dev": "pnpm --watch main.ts",
-    "start-be": "pnpm --watch main.ts"
+    "dev": "bun  --watch main.ts",
+    "start-be": "bun with-env main.ts",
+    "build": "tsc  --outDir dist",
+    "start": "bun dist/main.js"
   },
   "dependencies": {
     "@elysiajs/cors": "^0.7.1",
