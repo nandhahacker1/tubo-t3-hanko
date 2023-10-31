@@ -1,5 +1,5 @@
-import { createContext } from "@repo/server/";
-import { appRouter } from  "@repo/server/src/router";
+import { appRouter } from "@repo/server/src/router";
+import { createContext } from "@repo/server/src/context";
 import { createNextApiHandler } from "@trpc/server/adapters/next";
 import { NextApiHandler } from "next";
 import { env } from "@/env";
