@@ -9,8 +9,8 @@
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit",
     "with-env": "dotenv -e ../../.env --",
-    "dev": "bun  --watch main.ts",
-    "start-be": "bun --watch main.ts"
+    "dev": "pnpm --watch main.ts",
+    "start-be": "pnpm --watch main.ts"
   },
   "dependencies": {
     "@elysiajs/cors": "^0.7.1",
