@@ -22,7 +22,7 @@ const Todos = () => {
   return (
     <div>
       {todoList.length ? (
-        todoList.map((todo) => {
+        todoList.map((todo: any) => {
           return <Todo key={todo.id} todo={todo} />;
         })
       ) : (
