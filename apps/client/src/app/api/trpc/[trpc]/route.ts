@@ -26,7 +26,7 @@
 
 
 import { appRouter } from "@repo/server/src/router";
-import { createContext } from "@repo/server";
+import { createContext } from "@repo/server/src/context";
 import { type NextResponse, type NextRequest } from "next/server";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch"
 
