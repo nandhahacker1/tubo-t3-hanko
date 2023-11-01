@@ -53,7 +53,7 @@ import { env } from "@/env";
 // export { handler as GET, handler as POST }
 
 
-const handler: NextApiHandler = async (req: NextApiRequest, res: NextApiResponse) => {
+const handler: NextApiHandler = async (req, res) => {
   await fetchRequestHandler({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     req: req as any,
