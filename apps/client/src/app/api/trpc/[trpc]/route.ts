@@ -77,11 +77,7 @@ const handler = (req: Request) =>
     endpoint: `/api/trpc`,
     req,
     router: appRouter,
-    createContext: (): any => ({
-      then: () => {
-        throw new Error('Not implemented');
-      }
-    }),
+    createContext: (): any => ({req}),
     onError:
       process.env.NODE_ENV === 'development'
         ? ({ path, error }) => {
