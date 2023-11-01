@@ -9,7 +9,8 @@
     "with-env": "dotenv -e ../../.env --",
     "dev": "bun with-env prisma studio",
     "db-push": "bun with-env prisma db push",
-    "db-generate": "bun with-env prisma generate"
+    "db-generate": "bun with-env prisma generate",
+    "build":"bun with-env prisma generate && bun with-env prisma db push"
   },
   "dependencies": {
     "@prisma/client": "^4.6.1"
