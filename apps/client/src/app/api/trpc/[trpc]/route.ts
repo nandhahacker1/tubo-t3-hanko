@@ -53,19 +53,43 @@ import { env } from "@/env";
 // export { handler as GET, handler as POST }
 
 
-const handler: NextApiHandler = async (req, res) => {
-  await fetchRequestHandler({
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    req: req as any,
-    createContext: () => createContext({ req , res}),
-    router: appRouter,
-    endpoint: `${env.SERVER_URL}/api/trpc`,
-    onError: process.env.NODE_ENV === "development"
-      ? ({ error, path }) => {
-        console.error(`❌ tRPC failed on ${path ?? "<no-path>"}: ${error.message}`);
-      }
-      : undefined,
-  });
-};
+// const handler: NextApiHandler = async (req, res) => {
+//   await fetchRequestHandler({
+//     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+//     req: req as any,
+//     createContext: () => createContext({ req , res}),
+//     router: appRouter,
+//     endpoint: `${env.SERVER_URL}/api/trpc`,
+//     onError: process.env.NODE_ENV === "development"
+//       ? ({ error, path }) => {
+//         console.error(`❌ tRPC failed on ${path ?? "<no-path>"}: ${error.message}`);
+//       }
+//       : undefined,
+//   });
+// };
 
-export { handler as GET, handler as POST };
+// export { handler as GET, handler as POST };
+
+
+
+const handler = (req: Request) =>
+  fetchRequestHandler({
+    endpoint: `${env.SERVER_URL}/api/trpc`,
+    req,
+    router: appRouter,
+    createContext: (): any => ({
+      then: () => {
+        throw new Error('Not implemented');
+      }
+    }),
+    onError:
+      process.env.NODE_ENV === 'development'
+        ? ({ path, error }) => {
+            console.error(
+              `❌ tRPC failed on ${path ?? '<no-path>'}: ${error.message}`
+            );
+          }
+        : undefined,
+  });
+
+  export { handler as GET, handler as POST };
