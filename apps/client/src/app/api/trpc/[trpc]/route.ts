@@ -32,7 +32,7 @@ import { fetchRequestHandler } from "@trpc/server/adapters/fetch"
 
 import { NextApiRequest, NextApiResponse } from 'next';
 import { NextApiHandler } from 'next';
-import { env } from "@/env";
+// import { env } from "@/env";
 
 // const handler = (req: NextRequest) =>
 // fetchRequestHandler({
@@ -74,7 +74,7 @@ import { env } from "@/env";
 
 const handler = (req: Request) =>
   fetchRequestHandler({
-    endpoint: `${env.SERVER_URL}/api/trpc`,
+    endpoint: `/api/trpc`,
     req,
     router: appRouter,
     createContext: (): any => ({
