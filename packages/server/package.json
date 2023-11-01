@@ -9,8 +9,8 @@
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit",
     "with-env": "dotenv -e ../../.env --",
-    "dev": "pnpm  --watch main.ts",
-    "start-be": "pnpm main.ts",
+    "dev": "bun  --watch main.ts",
+    "start-be": "bun main.ts",
     "no-build": "tsc  --outDir dist",
     "start": "bun dist/main.js"
   },
